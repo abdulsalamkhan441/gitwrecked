@@ -13,8 +13,8 @@ const EXCUSES = [
 export default function ExcuseButtons() {
   const [toast, setToast] = useState<string | null>(null);
 
-  const handleClick = (comeback: string) => {
-    playSound('counterBurn');
+const handleClick = (comeback: string) => {
+    playSound('wedonotS'); // Or any key from your allowed list, like 'stopitS' or 'idontR'
     setToast(comeback);
     setTimeout(() => setToast(null), 2400);
   };
