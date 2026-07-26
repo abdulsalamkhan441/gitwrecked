@@ -45,7 +45,8 @@ export async function GET(
 
     const report = generateRoast(user, repos, mode);
 
-    const badges = typeof generateBadges === 'function' ? generateBadges(user, repos, report) : [];
+    // 4. Generate badges
+    const badges = typeof generateBadges === 'function' ? generateBadges(user, repos, report.roastText ? [report.roastText] : []) : [];
 
     if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
       try {
